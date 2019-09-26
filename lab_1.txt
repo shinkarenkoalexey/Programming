@@ -36,14 +36,14 @@ MsgBox "Количество деталей, которые рабочий из�
 End Sub
 Sub yarn()
 Dim r As Integer, q As Double, w As Double, e As Double, P As Double, O As Double, L As Double
-R = 12
+r = 12
 q = 0.93
 w = 0.06
 e = 0.01
-R = R * 1000
-P = R * q
-O = R * w
-L = R * e
+r = r * 1000
+P = r * q
+O = r * w
+L = r * e
 MsgBox "Получили пряжи - " & P, vbExclamation, "Ответ"
 MsgBox "Получили отходы - " & O, vbExclamation, "Ответ"
 MsgBox "Получили потери - " & L, vbExclamation, "Ответ"
