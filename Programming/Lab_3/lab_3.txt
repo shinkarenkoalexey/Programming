@@ -1,0 +1,174 @@
+Option Explicit
+Sub equation4()
+Dim x As Integer, answer As Double
+x = Val(InputBox("Введите x"))
+If x >= -2 And x <= 2 Then
+Select Case x
+Case Is < 0
+answer = Round(3 * x + (1 + x ^ 2) ^ (1 / 2), 2)
+Case 0 To 1
+answer = Round(2 * Cos(x) * Exp(-2 * x), 2)
+Case Is > 1
+answer = Round(2 * Sin(3 * x), 2)
+End Select
+MsgBox "Ответ = " & answer, vbExclamation, "Ответ"
+Else: MsgBox "Введите другое значение x", vbExclamation, "Ответ"
+End If
+End Sub
+Sub capacity()
+Dim number As Long
+number = InputBox("Введите число")
+Select Case number
+Case 0 To 9
+MsgBox "Однозначное", vbExclamation, "Ответ"
+Case 11 To 99
+MsgBox "Двузначное", vbExclamation, "Ответ"
+Case 100 To 999
+MsgBox "Трехзначное", vbExclamation, "Ответ"
+Case 1000 To 9999
+MsgBox "Четырехзначное", vbExclamation, "Ответ"
+Case 10000 To 99999
+MsgBox "Пятизначное", vbExclamation, "Ответ"
+Case 100000 To 999999
+MsgBox "Шестизначное", vbExclamation, "Ответ"
+Case Is > 999999
+MsgBox "Слишком длинное число для такой простой программы :)", vbExclamation, "Ответ"
+End Select
+End Sub
+Sub Figure1()
+Dim Name As String, A As Integer, B As Integer, C As Integer, D As Integer, h As Integer, P As Double, S As Double, Pmin As Integer, Pi As Double
+Name = InputBox("Введите фигуру")
+Select Case Name
+Case "Треугольник"
+A = Val(InputBox("Введите первую сторону"))
+B = Val(InputBox("Введите вторую сторону"))
+C = Val(InputBox("Введите третью сторону"))
+P = A + B + C
+Pmin = P / 2
+S = (Pmin * (Pmin - A) * (Pmin - B) * (Pmin - C)) ^ (1 / 2)
+MsgBox "Периметр - " & P, vbExclamation, "Ответ"
+MsgBox "Площадь - " & S, vbExclamation, "Ответ"
+Case "Прямоугольник"
+A = Val(InputBox("Введите первую сторону"))
+B = Val(InputBox("Введите вторую сторону"))
+P = A + B
+S = A * B
+MsgBox "Периметр - " & P, vbExclamation, "Ответ"
+MsgBox "Площадь - " & S, vbExclamation, "Ответ"
+Case "Квадрат"
+A = Val(InputBox("Введите сторону"))
+P = 4 * A
+S = A ^ 2
+MsgBox "Периметр - " & P, vbExclamation, "Ответ"
+MsgBox "Площадь - " & S, vbExclamation, "Ответ"
+Case "Круг"
+Pi = 3.14
+A = Val(InputBox("Введите радиус круга"))
+S = Pi * A ^ 2
+P = 2 * Pi * A
+MsgBox "Периметр - " & P, vbExclamation, "Ответ"
+MsgBox "Площадь - " & S, vbExclamation, "Ответ"
+Case "Трапеция"
+A = Val(InputBox("Введите первое основание трапеции"))
+B = Val(InputBox("Введите второе основание трапеции"))
+C = Val(InputBox("Введите первую боковую сторону трапеции"))
+D = Val(InputBox("Введите второе боковую сторону трапеции"))
+h = Val(InputBox("Введите высоту трапеции"))
+S = (A + B) / 2 * h
+P = A + B + C + D
+MsgBox "Периметр - " & P, vbExclamation, "Ответ"
+MsgBox "Площадь - " & S, vbExclamation, "Ответ"
+Case "Ромб"
+A = Val(InputBox("Введите сторону ромба"))
+B = Val(InputBox("Введите длину первой диагонали ромба"))
+C = Val(InputBox("Введите длину второй диагонали ромба"))
+S = B * C / 2
+P = 4 * A
+MsgBox "Периметр - " & P, vbExclamation, "Ответ"
+MsgBox "Площадь - " & S, vbExclamation, "Ответ"
+Case Else
+MsgBox "Такую фигуру данная программа не знает, попробуйте ввести другую"
+End Select
+End Sub
+Sub whatfigure()
+Dim A As Integer
+A = Int((5 - 2 + 1) * Rnd + 2)
+Select Case A Mod 2 = 0 And A <> 4
+Case True
+MsgBox "Можно построить отрезок", vbExclamation, "Ответ"
+End Select
+Select Case A Mod 3 = 0
+Case True
+MsgBox "Можно построить треугольник", vbExclamation, "Ответ"
+End Select
+Select Case A Mod 4 = 0
+Case True
+MsgBox "Можно построить квадрат, прямоугольник, четырехугольник, трапеция, параллелограмм или ромб"
+End Select
+Select Case A Mod 5 = 0
+Case True
+MsgBox "Можно построить пятиугольник", vbExclamation, "Ответ"
+End Select
+MsgBox "Количество точек - " & A, vbExclamation, "Рандомное число"
+End Sub
+Sub multiplicity()
+Dim number As Integer, m As String
+number = Val(InputBox("Введите число"))
+Select Case number Mod 1 = 0
+Case True
+m = m + " 1 "
+End Select
+Select Case number Mod 2 = 0
+Case True
+m = m + " 2 "
+End Select
+Select Case number Mod 3 = 0
+Case True
+m = m + " 3 "
+End Select
+Select Case number Mod 4 = 0
+Case True
+m = m + " 4 "
+End Select
+Select Case number Mod 5 = 0
+Case True
+m = m + " 5 "
+End Select
+Select Case number Mod 6 = 0
+Case True
+m = m + " 6 "
+End Select
+Select Case number Mod 7 = 0
+Case True
+m = m + " 7 "
+End Select
+Select Case number Mod 8 = 0
+Case True
+m = m + " 8 "
+End Select
+Select Case number Mod 9 = 0
+Case True
+m = m + " 9 "
+End Select
+MsgBox "Ваше число кратно - " & m, vbExclamation, "Ответ"
+End Sub
+Sub Phone()
+Dim Phone As String, phonecode As String
+Phone = (InputBox("Введите номер телефона в формате 8xxxxxxxxxx"))
+phonecode = Mid(Phone, 2, 3)
+Select Case phonecode
+Case 999
+MsgBox "Yota", vbExclamation, "Ответ"
+Case 931, 921, 929
+MsgBox "Мегафон", vbExclamation, "Ответ"
+Case 967, 968, 905, 969, 906, 909, 960, 961, 962, 963, 964, 965, 966, 903
+MsgBox "Билайн", vbExclamation, "Ответ"
+Case 904, 952, 953, 991, 900, 950, 951
+MsgBox "Теле-2", vbExclamation, "Ответ"
+Case 981, 911
+MsgBox "МТС", vbExclamation, "Ответ"
+Case Else
+MsgBox "В базе не найден такой код оператора", vbExclamation, "Код оператоа не найден"
+End Select
+MsgBox "Код оператора вашего номера - " & phonecode, vbExclamation, "Код"
+End Sub
