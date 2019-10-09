@@ -132,7 +132,7 @@ End If
 MsgBox "Наименьшая разность по абсолютной величине - " & min, vbExclamation, "Ответ"
 End Sub
 Sub Figure1()
-Dim Name As String, a As Integer, b As Integer, c As Integer, d As Integer, h As Integer, P As Double, S As Double, Pmin As Integer, Pi As Double
+Dim Name As String, a As Integer, b As Integer, c As Integer, d As Integer, h As Integer, P As Double, S As Double, Pmin As Double, Pi As Double
 Name = InputBox("Введите фигуру")
 If Name = "Треугольник" Then
 a = Val(InputBox("Введите первую сторону"))
