@@ -1,20 +1,20 @@
 Private Sub CommandButton1_Click()
-' Закрытие программы
+' Р—Р°РєСЂС‹С‚РёРµ РїСЂРѕРіСЂР°РјРјС‹
 Unload Me
 End Sub
 
 Private Sub OptionButton1_Click()
-' Красный
+' РљСЂР°СЃРЅС‹Р№
 Me.Label1.BackColor = RGB(256, 0, 0)
 End Sub
 
 Private Sub OptionButton2_Click()
-' Зеленый
+' Р—РµР»РµРЅС‹Р№
 Me.Label1.BackColor = RGB(0, 256, 0)
 End Sub
 
 Private Sub OptionButton3_Click()
-' Синий
+' РЎРёРЅРёР№
 Me.Label1.BackColor = RGB(0, 0, 256)
 End Sub
 
