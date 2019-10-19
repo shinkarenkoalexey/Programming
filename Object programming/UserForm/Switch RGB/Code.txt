@@ -1,0 +1,23 @@
+Private Sub CommandButton1_Click()
+' Закрытие программы
+Unload Me
+End Sub
+
+Private Sub OptionButton1_Click()
+' Красный
+Me.Label1.BackColor = RGB(256, 0, 0)
+End Sub
+
+Private Sub OptionButton2_Click()
+' Зеленый
+Me.Label1.BackColor = RGB(0, 256, 0)
+End Sub
+
+Private Sub OptionButton3_Click()
+' Синий
+Me.Label1.BackColor = RGB(0, 0, 256)
+End Sub
+
+Private Sub UserForm_Initialize()
+Me.Caption = "Switch_RGB"
+End Sub
