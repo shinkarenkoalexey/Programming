@@ -1,25 +1,25 @@
 Option Explicit
 Sub n()
 Dim n As Long, x As Long, y As Double
-n = Val(InputBox("Введите число n"))
+n = Val(InputBox("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ n"))
 x = 1
 y = 0
 Do While x <= n
 y = y + (1 / (x ^ x))
 x = x + 1
 Loop
-MsgBox "Ответ = " & y, vbExclamation, "Ответ"
+MsgBox "РћС‚РІРµС‚ = " & y, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub factorial()
 Dim n As Integer, fac As Long, n1 As Integer
-n = Val(InputBox("Введите число n"))
+n = Val(InputBox("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ n"))
 n1 = n
 fac = 1
 Do While n > 0
 fac = fac * n
 n = n - 1
 Loop
-MsgBox "Факториал " & n1 & " = " & fac, vbExclamation, "Ответ"
+MsgBox "Р¤Р°РєС‚РѕСЂРёР°Р» " & n1 & " = " & fac, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub arge()
 Dim n As Long, n1 As Long, sum3 As Long, sum4 As Long, sumall As Long, A As Double, G As Double, random As Integer, multiplicationall As Double
@@ -46,17 +46,17 @@ Loop
 Select Case sum3
 Case Is > sum4
 A = sumall / n1
-MsgBox "Среднее арифметическое ряда чисел = " & A, vbExclamation, "Ответ"
+MsgBox "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЂСЏРґР° С‡РёСЃРµР» = " & A, vbExclamation, "РћС‚РІРµС‚"
 Case Is < sum4
 G = Round(multiplicationall, 2)
-MsgBox "Среднее геометрическое ряда чисел = " & G, vbExclamation, "Ответ"
+MsgBox "РЎСЂРµРґРЅРµРµ РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕРµ СЂСЏРґР° С‡РёСЃРµР» = " & G, vbExclamation, "РћС‚РІРµС‚"
 Case Else
-MsgBox "Суммы чисел кратных 3 и 4 равны", vbExclamation, "Ответ"
+MsgBox "РЎСѓРјРјС‹ С‡РёСЃРµР» РєСЂР°С‚РЅС‹С… 3 Рё 4 СЂР°РІРЅС‹", vbExclamation, "РћС‚РІРµС‚"
 End Select
 End Sub
 Sub maxandmin()
 Dim x As Integer, y As Integer, z As Integer, n As Integer, row As String
-n = Val(InputBox("Введите количество двузначных случайных чисел"))
+n = Val(InputBox("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РґРІСѓР·РЅР°С‡РЅС‹С… СЃР»СѓС‡Р°Р№РЅС‹С… С‡РёСЃРµР»"))
 x = 9
 y = 100
 Do
@@ -66,11 +66,11 @@ If z < y Then y = z
 row = row & z & "  "
 n = n - 1
 Loop Until n < 0
-MsgBox "Ряд случайных чисел = " & row & vbCr & "Минимальное = " & y & vbCr & "Максимальное = " & x, vbExclamation, "Ответ"
+MsgBox "Р СЏРґ СЃР»СѓС‡Р°Р№РЅС‹С… С‡РёСЃРµР» = " & row & vbCr & "РњРёРЅРёРјР°Р»СЊРЅРѕРµ = " & y & vbCr & "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ = " & x, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub natdigits()
 Dim n As Integer, n1 As Integer, A As Double, sum As Long, deviation As Double, deviation1 As Double, deviation2 As Double, random As Integer, row As String, max As Integer, min As Integer
-n = Val(InputBox("Введите число n"))
+n = Val(InputBox("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ n"))
 max = 9
 min = 100
 sum = 0
@@ -91,11 +91,11 @@ deviation = deviation1
 Else
 deviation = deviation2
 End If
-MsgBox "Ряд чисел " & row & vbCr & "Максимальное отклонение о среднего " & deviation & vbCr & "Среднее арифметическое " & A, vbExclamation, "Ответ"
+MsgBox "Р СЏРґ С‡РёСЃРµР» " & row & vbCr & "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ Рѕ СЃСЂРµРґРЅРµРіРѕ " & deviation & vbCr & "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ " & A, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub evenandodd()
 Dim n As Integer, n1 As Integer, sum As Long, even As Long, odd As Long, random As Integer, row As String, A As Double
-n = Val(InputBox("Введите число n"))
+n = Val(InputBox("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ n"))
 sum = 0
 even = 0
 odd = 0
@@ -118,5 +118,5 @@ A = A * 5
 Else
 A = Round(A ^ (1 / 5), 2)
 End If
-MsgBox "Ряд чисел - " & row & vbCr & "Количество четных - " & even & vbCr & "Количество нечетных - " & odd & vbCr & "Среднее арифметическое (измененное) - " & A, vbExclamation, "Ответ"
+MsgBox "Р СЏРґ С‡РёСЃРµР» - " & row & vbCr & "РљРѕР»РёС‡РµСЃС‚РІРѕ С‡РµС‚РЅС‹С… - " & even & vbCr & "РљРѕР»РёС‡РµСЃС‚РІРѕ РЅРµС‡РµС‚РЅС‹С… - " & odd & vbCr & "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ (РёР·РјРµРЅРµРЅРЅРѕРµ) - " & A, vbExclamation, "РћС‚РІРµС‚"
 End Sub
