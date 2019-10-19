@@ -1,5 +1,5 @@
 Private Sub CommandButton1_Click()
-' Красный
+' РљСЂР°СЃРЅС‹Р№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &HFF&
@@ -7,7 +7,7 @@ Next i
 End Sub
 
 Private Sub CommandButton10_Click()
-' Очистка поля
+' РћС‡РёСЃС‚РєР° РїРѕР»СЏ
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &H80000003
@@ -15,12 +15,12 @@ Next i
 End Sub
 
 Private Sub CommandButton11_Click()
-' Закрытие программы
+' Р—Р°РєСЂС‹С‚РёРµ РїСЂРѕРіСЂР°РјРјС‹
 Unload Me
 End Sub
 
 Private Sub CommandButton2_Click()
-' Оранжевый
+' РћСЂР°РЅР¶РµРІС‹Р№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &H80FF&
@@ -28,7 +28,7 @@ Next i
 End Sub
 
 Private Sub CommandButton3_Click()
-' Зеленый
+' Р—РµР»РµРЅС‹Р№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &HFF00&
@@ -36,7 +36,7 @@ Next i
 End Sub
 
 Private Sub CommandButton4_Click()
-' Желтый
+' Р–РµР»С‚С‹Р№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &HFFFF&
@@ -44,7 +44,7 @@ Next i
 End Sub
 
 Private Sub CommandButton5_Click()
-' Белый
+' Р‘РµР»С‹Р№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &HFFFFFF
@@ -52,7 +52,7 @@ Next i
 End Sub
 
 Private Sub CommandButton7_Click()
-' Синий
+' РЎРёРЅРёР№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &HFF0000
@@ -60,7 +60,7 @@ Next i
 End Sub
 
 Private Sub CommandButton8_Click()
-' Розовый
+' Р РѕР·РѕРІС‹Р№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &HFF00FF
@@ -68,7 +68,7 @@ Next i
 End Sub
 
 Private Sub CommandButton9_Click()
-' Голубой
+' Р“РѕР»СѓР±РѕР№
 For i = 1 To 40
 Set ctrlLabel = Me.Controls("Label" & i)
 ctrlLabel.BackColor = &HFFFF00
