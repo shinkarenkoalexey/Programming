@@ -9,12 +9,12 @@ For i = 1 To 9
     table = table & vbCr
 Next i
 
-MsgBox table, vbExclamation, "Таблица умножений"
+MsgBox table, vbExclamation, "РўР°Р±Р»РёС†Р° СѓРјРЅРѕР¶РµРЅРёР№"
 End Sub
 Sub doublemat1()
 Dim i As Integer, j As Integer, n As Integer, m As Integer, str As String, random As Long, count As Integer
-n = Val(InputBox("Количество строк"))
-m = Val(InputBox("Количество столбцов"))
+n = Val(InputBox("РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє"))
+m = Val(InputBox("РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ"))
 For i = 1 To n
     For j = 1 To m
         random = Int((100 - 0 + 1) * Rnd + 0)
@@ -23,12 +23,12 @@ For i = 1 To n
     Next j
     str = str & vbCr
 Next i
-MsgBox str & vbCr & "Количество нулевых значений - " & count
+MsgBox str & vbCr & "РљРѕР»РёС‡РµСЃС‚РІРѕ РЅСѓР»РµРІС‹С… Р·РЅР°С‡РµРЅРёР№ - " & count
 End Sub
 Sub doublemat2()
 Dim i As Integer, j As Integer, n As Integer, m As Integer, str As String, random As Long, min As Integer, max As Integer
-n = Val(InputBox("Количество строк"))
-m = Val(InputBox("Количество столбцов"))
+n = Val(InputBox("РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє"))
+m = Val(InputBox("РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ"))
 min = 100
 For i = 1 To n
     For j = 1 To m
@@ -39,5 +39,5 @@ For i = 1 To n
     Next j
     str = str & vbCr
 Next i
-MsgBox str & vbCr & "Минимальное значение - " & min & vbCr & "Максимальное значение - " & max
+MsgBox str & vbCr & "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ - " & min & vbCr & "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ - " & max
 End Sub
