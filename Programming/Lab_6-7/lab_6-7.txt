@@ -10,23 +10,23 @@ odd = odd + mass(i)
 oddcount = oddcount + 1
 End Select
 Next i
-    For k = 0 To 15
-        If mass(k) = 2 Then
-            For j = 0 To 15
-                Select Case mass(j) Mod 2 = 0
-                    Case True
-                        mass(j) = 0
-                        n = n + 1
-                End Select
-                    s1 = s1 & mass(j) & " "
-            Next j
-        End If
-    Next k
+For k = 0 To 15
+If mass(k) = 2 Then
+For j = 0 To 15
+Select Case mass(j) Mod 2 = 0
+Case True
+mass(j) = 0
+n = n + 1
+End Select
+s1 = s1 & mass(j) & " "
+Next j
+End If
+Next k
 arf = Round(odd / oddcount, 2)
 If s1 = "" Then
-MsgBox s & vbCr & s & vbCr & "Среднее арифметическое нечетных - " & arf, vbExclamation, "Ответ"
+MsgBox s & vbCr & s & vbCr & "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РЅРµС‡РµС‚РЅС‹С… - " & arf, vbExclamation, "РћС‚РІРµС‚"
 Else
-MsgBox s & vbCr & s1 & vbCr & "Количество четных - " & n, vbExclamation, "Ответ"
+MsgBox s & vbCr & s1 & vbCr & "РљРѕР»РёС‡РµСЃС‚РІРѕ С‡РµС‚РЅС‹С… - " & n, vbExclamation, "РћС‚РІРµС‚"
 End If
 End Sub
 Sub M15()
@@ -54,9 +54,9 @@ Next i
 End If
 v = Round(Sqr(sumsquare), 2)
 If s1 = "" Then
-MsgBox s & vbCr & "Вектор - " & v, vbExclamation, "Ответ"
+MsgBox s & vbCr & "Р’РµРєС‚РѕСЂ - " & v, vbExclamation, "РћС‚РІРµС‚"
 Else
-MsgBox s & vbCr & s1, vbExclamation, "Ответ"
+MsgBox s & vbCr & s1, vbExclamation, "РћС‚РІРµС‚"
 End If
 End Sub
 Sub C15()
@@ -79,7 +79,7 @@ deviation = max - c
 Else
 deviation = c - min
 End If
-MsgBox "Массив - " & row & vbCr & "Маскимальное = " & max & vbCr & "Минимальное = " & min & vbCr & "Наибольшее отклонение = " & c, vbExclamation, "Ответ"
+MsgBox "РњР°СЃСЃРёРІ - " & row & vbCr & "РњР°СЃРєРёРјР°Р»СЊРЅРѕРµ = " & max & vbCr & "РњРёРЅРёРјР°Р»СЊРЅРѕРµ = " & min & vbCr & "РќР°РёР±РѕР»СЊС€РµРµ РѕС‚РєР»РѕРЅРµРЅРёРµ = " & c, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub A12()
 Dim mass(12) As Integer, i As Integer, row As String, A As Double, sum As Long, row2 As String
@@ -100,7 +100,7 @@ End If
 mass(i) = mass(i)
 row2 = row2 & mass(i) & " "
 Next i
-MsgBox "Массив - " & row & vbCr & "Измененный массив - " & row2, vbExclamation, "Ответ"
+MsgBox "РњР°СЃСЃРёРІ - " & row & vbCr & "РР·РјРµРЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ - " & row2, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub C8andB8()
 Dim i As Integer, massC(8) As Integer, massB(8) As Integer, rowc As String, rowb As String, rowcc As String, rowbb As String
@@ -120,7 +120,7 @@ End If
 rowcc = rowcc & massC(i) & " "
 rowbb = rowbb & massB(i) & " "
 Next i
-MsgBox "Массив C - " & rowc & vbCr & "Массив B - " & rowb & vbCr & "Измененный массив C - " & rowcc & vbCr & "Измененный массив B - " & rowbb, vbExclamation, "Ответ"
+MsgBox "РњР°СЃСЃРёРІ C - " & rowc & vbCr & "РњР°СЃСЃРёРІ B - " & rowb & vbCr & "РР·РјРµРЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ C - " & rowcc & vbCr & "РР·РјРµРЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ B - " & rowbb, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub M15v2()
 Dim mass(15) As Integer, i As Integer, row As String, count As Integer, sum As Long, row2
@@ -142,7 +142,7 @@ End If
 row2 = row2 & mass(i) & " "
 Next i
 End If
-MsgBox row & vbCr & count & vbCr & row2, vbExclamation, "Ответ"
+MsgBox row & vbCr & count & vbCr & row2, vbExclamation, "РћС‚РІРµС‚"
 End Sub
 Sub c15v2()
 Dim mass(15) As Double, A As Double, i As Integer, row As String, sum As Integer, multiplication As Double, max As Integer, min As Integer, deviation As Integer, row2 As String
@@ -181,5 +181,5 @@ End Select
 row2 = row2 & mass(i) & " "
 Next i
 End If
-MsgBox "Массив - " & row & vbCr & "Среднее арифметическое - " & A & vbCr & "Среднее геометрическое - " & multiplication & vbCr & "Наибольшее отклонение - " & deviation & vbCr & "Измененный массив - " & row2, vbExclamation, "Ответ"
+MsgBox "РњР°СЃСЃРёРІ - " & row & vbCr & "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ - " & A & vbCr & "РЎСЂРµРґРЅРµРµ РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕРµ - " & multiplication & vbCr & "РќР°РёР±РѕР»СЊС€РµРµ РѕС‚РєР»РѕРЅРµРЅРёРµ - " & deviation & vbCr & "РР·РјРµРЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ - " & row2, vbExclamation, "РћС‚РІРµС‚"
 End Sub
