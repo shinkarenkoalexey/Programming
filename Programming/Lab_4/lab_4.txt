@@ -1,0 +1,122 @@
+Option Explicit
+Sub n()
+Dim n As Long, x As Long, y As Double
+n = Val(InputBox("Введите число n"))
+x = 1
+y = 0
+Do While x <= n
+y = y + (1 / (x ^ x))
+x = x + 1
+Loop
+MsgBox "Ответ = " & y, vbExclamation, "Ответ"
+End Sub
+Sub factorial()
+Dim n As Integer, fac As Long, n1 As Integer
+n = Val(InputBox("Введите число n"))
+n1 = n
+fac = 1
+Do While n > 0
+fac = fac * n
+n = n - 1
+Loop
+MsgBox "Факториал " & n1 & " = " & fac, vbExclamation, "Ответ"
+End Sub
+Sub arge()
+Dim n As Long, n1 As Long, sum3 As Long, sum4 As Long, sumall As Long, A As Double, G As Double, random As Integer, multiplicationall As Double
+n = Int((111 - 10 + 1) * Rnd + 10)
+sum3 = 0
+sum4 = 0
+sumall = 0
+multiplicationall = 1
+n1 = n
+Do While n > 0
+random = Int((99 - 10 + 1) * Rnd + 10)
+n = n - 1
+Select Case random Mod 3 = 0
+Case True
+sum3 = sum3 + random
+End Select
+Select Case random Mod 4 = 0
+Case True
+sum4 = sum4 + random
+End Select
+sumall = sumall + random
+multiplicationall = multiplicationall * (random ^ (1 / n1))
+Loop
+Select Case sum3
+Case Is > sum4
+A = sumall / n1
+MsgBox "Среднее арифметическое ряда чисел = " & A, vbExclamation, "Ответ"
+Case Is < sum4
+G = Round(multiplicationall, 2)
+MsgBox "Среднее геометрическое ряда чисел = " & G, vbExclamation, "Ответ"
+Case Else
+MsgBox "Суммы чисел кратных 3 и 4 равны", vbExclamation, "Ответ"
+End Select
+End Sub
+Sub maxandmin()
+Dim x As Integer, y As Integer, z As Integer, n As Integer, row As String
+n = Val(InputBox("Введите количество двузначных случайных чисел"))
+x = 9
+y = 100
+Do
+z = Int((99 - 10 + 1) * Rnd + 10)
+If z > x Then x = z
+If z < y Then y = z
+row = row & z & "  "
+n = n - 1
+Loop Until n < 0
+MsgBox "Ряд случайных чисел = " & row & vbCr & "Минимальное = " & y & vbCr & "Максимальное = " & x, vbExclamation, "Ответ"
+End Sub
+Sub natdigits()
+Dim n As Integer, n1 As Integer, A As Double, sum As Long, deviation As Double, deviation1 As Double, deviation2 As Double, random As Integer, row As String, max As Integer, min As Integer
+n = Val(InputBox("Введите число n"))
+max = 9
+min = 100
+sum = 0
+n1 = n
+Do
+random = Int((99 - 10 + 1) * Rnd + 10)
+sum = sum + random
+n = n - 1
+row = row & random & " "
+If random > max Then max = random
+If random < min Then min = random
+Loop Until n < 0
+A = sum / n1
+deviation1 = max - A
+deviation2 = A - min
+If deviation1 > deviation2 Then
+deviation = deviation1
+Else
+deviation = deviation2
+End If
+MsgBox "Ряд чисел " & row & vbCr & "Максимальное отклонение о среднего " & deviation & vbCr & "Среднее арифметическое " & A, vbExclamation, "Ответ"
+End Sub
+Sub evenandodd()
+Dim n As Integer, n1 As Integer, sum As Long, even As Long, odd As Long, random As Integer, row As String, A As Double
+n = Val(InputBox("Введите число n"))
+sum = 0
+even = 0
+odd = 0
+n1 = n
+Do While n > 0
+random = Int((99 - 10 + 1) * Rnd + 10)
+sum = sum + random
+row = row & random & " "
+n = n - 1
+Select Case random Mod 2 = 0
+Case True
+even = even + 1
+Case False
+odd = odd + 1
+End Select
+Loop
+A = sum / n1
+If even > odd Then
+A = A * 5
+Else
+A = Round(A ^ (1 / 5), 2)
+End If
+MsgBox "Ряд чисел - " & row & vbCr & "Количество четных - " & even & vbCr & "Количество нечетных - " & odd & vbCr & "Среднее арифметическое (измененное) - " & A, vbExclamation, "Ответ"
+End Sub

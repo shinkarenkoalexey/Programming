@@ -1,0 +1,43 @@
+Option Explicit
+Sub table()
+Dim table As String, i As Integer, j As Integer, b As Integer
+For i = 1 To 9
+    For j = 1 To 9
+    b = i * j
+    table = table & i & "*" & j & " = " & b & " " & vbCr
+    Next j
+    table = table & vbCr
+Next i
+
+MsgBox table, vbExclamation, "Таблица умножений"
+End Sub
+Sub doublemat1()
+Dim i As Integer, j As Integer, n As Integer, m As Integer, str As String, random As Long, count As Integer
+n = Val(InputBox("Количество строк"))
+m = Val(InputBox("Количество столбцов"))
+For i = 1 To n
+    For j = 1 To m
+        random = Int((100 - 0 + 1) * Rnd + 0)
+        str = str & random & " "
+        If random = 0 Then count = count + 1
+    Next j
+    str = str & vbCr
+Next i
+MsgBox str & vbCr & "Количество нулевых значений - " & count
+End Sub
+Sub doublemat2()
+Dim i As Integer, j As Integer, n As Integer, m As Integer, str As String, random As Long, min As Integer, max As Integer
+n = Val(InputBox("Количество строк"))
+m = Val(InputBox("Количество столбцов"))
+min = 100
+For i = 1 To n
+    For j = 1 To m
+        random = Int((100 - 0 + 1) * Rnd + 0)
+        str = str & random & " "
+        If random > max Then max = random
+        If random < min Then min = random
+    Next j
+    str = str & vbCr
+Next i
+MsgBox str & vbCr & "Минимальное значение - " & min & vbCr & "Максимальное значение - " & max
+End Sub

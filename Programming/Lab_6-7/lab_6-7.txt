@@ -1,0 +1,185 @@
+Option Explicit
+Sub A15()
+Dim s As String, s1 As String, i As Integer, mass(15) As Integer, n As Integer, j As Integer, k As Integer, odd As Integer, oddcount As Integer, arf As Double
+For i = 0 To 15
+mass(i) = Int((25 - 0 + 1) * Rnd + 0)
+s = s & mass(i) & " "
+Select Case mass(i) Mod 2 <> 0
+Case True
+odd = odd + mass(i)
+oddcount = oddcount + 1
+End Select
+Next i
+    For k = 0 To 15
+        If mass(k) = 2 Then
+            For j = 0 To 15
+                Select Case mass(j) Mod 2 = 0
+                    Case True
+                        mass(j) = 0
+                        n = n + 1
+                End Select
+                    s1 = s1 & mass(j) & " "
+            Next j
+        End If
+    Next k
+arf = Round(odd / oddcount, 2)
+If s1 = "" Then
+MsgBox s & vbCr & s & vbCr & "Среднее арифметическое нечетных - " & arf, vbExclamation, "Ответ"
+Else
+MsgBox s & vbCr & s1 & vbCr & "Количество четных - " & n, vbExclamation, "Ответ"
+End If
+End Sub
+Sub M15()
+Dim mass(15) As Integer, n As Integer, A As Integer, G As Integer, sum As Integer, m As Double, i As Integer, s As String, s1 As String, r As Double, sumsquare As Double, v As Double
+m = 1
+n = 15
+sumsquare = 1
+For i = 0 To 15
+mass(i) = Int((25 - 0 + 1) * Rnd + 0)
+sum = sum + mass(i)
+sumsquare = sumsquare + mass(i) ^ 2
+m = m * mass(i)
+s = s & mass(i) & " "
+Next i
+A = sum / n
+G = m ^ (1 / n)
+r = A - G
+If r Mod 2 = 0 Then
+For i = 0 To 15
+If i Mod 2 = 0 Then
+mass(i) = 0
+End If
+s1 = s1 & mass(i) & " "
+Next i
+End If
+v = Round(Sqr(sumsquare), 2)
+If s1 = "" Then
+MsgBox s & vbCr & "Вектор - " & v, vbExclamation, "Ответ"
+Else
+MsgBox s & vbCr & s1, vbExclamation, "Ответ"
+End If
+End Sub
+Sub C15()
+Dim i As Integer, max As Integer, min As Integer, s As Integer, row As String, mass(15) As Integer, c As Double, deviation As Double
+mass(0) = Int((99 - 0 + 1) * Rnd + 0)
+min = mass(0)
+max = mass(0)
+row = row & mass(0) & " "
+For i = 1 To 15
+mass(i) = Int((99 - 0 + 1) * Rnd + 0)
+If mass(i) > max Then max = mass(i)
+If mass(i) < min Then min = mass(i)
+row = row & mass(i) & " "
+s = s + mass(i)
+Next i
+i = i + 1
+c = s / i
+If max - c > c - min Then
+deviation = max - c
+Else
+deviation = c - min
+End If
+MsgBox "Массив - " & row & vbCr & "Маскимальное = " & max & vbCr & "Минимальное = " & min & vbCr & "Наибольшее отклонение = " & c, vbExclamation, "Ответ"
+End Sub
+Sub A12()
+Dim mass(12) As Integer, i As Integer, row As String, A As Double, sum As Long, row2 As String
+For i = 0 To 12
+mass(i) = Int((99 - 0 + 1) * Rnd + 0)
+row = row & mass(i) & " "
+sum = sum + mass(i)
+Next i
+i = i + 1
+A = sum / i
+i = 0
+For i = 0 To 12
+If mass(i) < A Then
+mass(i) = 0
+Else
+mass(i) = 1
+End If
+mass(i) = mass(i)
+row2 = row2 & mass(i) & " "
+Next i
+MsgBox "Массив - " & row & vbCr & "Измененный массив - " & row2, vbExclamation, "Ответ"
+End Sub
+Sub C8andB8()
+Dim i As Integer, massC(8) As Integer, massB(8) As Integer, rowc As String, rowb As String, rowcc As String, rowbb As String
+For i = 0 To 8
+massC(i) = Int((99 - 0 + 1) * Rnd + 0)
+massB(i) = Int((99 - 0 + 1) * Rnd + 0)
+rowc = rowc & massC(i) & " "
+rowb = rowb & massB(i) & " "
+Next i
+i = 0
+For i = 0 To 8
+If massC(i) Mod 5 = 0 Then
+massB(i) = massB(i) * 5
+Else
+massB(i) = 0
+End If
+rowcc = rowcc & massC(i) & " "
+rowbb = rowbb & massB(i) & " "
+Next i
+MsgBox "Массив C - " & rowc & vbCr & "Массив B - " & rowb & vbCr & "Измененный массив C - " & rowcc & vbCr & "Измененный массив B - " & rowbb, vbExclamation, "Ответ"
+End Sub
+Sub M15v2()
+Dim mass(15) As Integer, i As Integer, row As String, count As Integer, sum As Long, row2
+For i = 0 To 15
+mass(i) = Int((15 - 0 + 1) * Rnd + 0)
+row = row & mass(i) & " "
+If mass(i) > 3 And mass(i) < 11 Then
+count = count + 1
+End If
+Next i
+i = 0
+If count < 4 Then
+For i = 0 To 15
+If mass(i) Mod count = 0 Then
+sum = sum + mass(i)
+ElseIf mass(i) Mod count <= 2 Then
+mass(i) = mass(i) ^ 2
+End If
+row2 = row2 & mass(i) & " "
+Next i
+End If
+MsgBox row & vbCr & count & vbCr & row2, vbExclamation, "Ответ"
+End Sub
+Sub c15v2()
+Dim mass(15) As Double, A As Double, i As Integer, row As String, sum As Integer, multiplication As Double, max As Integer, min As Integer, deviation As Integer, row2 As String
+multiplication = 1
+min = 100
+For i = 0 To 15
+mass(i) = Int((99 - 0 + 1) * Rnd + 0)
+row = row & mass(i) & " "
+sum = sum + mass(i)
+multiplication = Round(multiplication * mass(i) ^ (1 / 15), 2)
+If mass(i) > max Then max = mass(i)
+If mass(i) < min Then min = mass(i)
+Next i
+A = Round(sum / 15, 2)
+If max - A > A - min Then
+deviation = max - A
+Else
+deviation = A - min
+End If
+i = 0
+If deviation Mod 2 = 0 Then
+For i = 0 To 15
+Select Case i
+Case 2, 5, 8, 11, 14
+mass(i) = deviation
+End Select
+row2 = row2 & mass(i) & " "
+Next i
+Else
+i = 0
+For i = 0 To 15
+Select Case i
+Case 4, 9, 14
+mass(i) = mass(i) ^ 2
+End Select
+row2 = row2 & mass(i) & " "
+Next i
+End If
+MsgBox "Массив - " & row & vbCr & "Среднее арифметическое - " & A & vbCr & "Среднее геометрическое - " & multiplication & vbCr & "Наибольшее отклонение - " & deviation & vbCr & "Измененный массив - " & row2, vbExclamation, "Ответ"
+End Sub
