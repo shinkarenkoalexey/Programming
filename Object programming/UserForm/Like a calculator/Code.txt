@@ -2,29 +2,29 @@ Private Sub CommandButton1_Click()
 Dim r As Double
 a = Val(TextBox1.Text)
 b = Val(TextBox2.Text)
-If ComboBox1.Text = "Сложение" Then
+If ComboBox1.Text = "РЎР»РѕР¶РµРЅРёРµ" Then
 r = a + b
 End If
-If ComboBox1.Text = "Вычитание" Then
+If ComboBox1.Text = "Р’С‹С‡РёС‚Р°РЅРёРµ" Then
 r = a - b
 End If
-If ComboBox1.Text = "Умножение" Then
+If ComboBox1.Text = "РЈРјРЅРѕР¶РµРЅРёРµ" Then
 r = a * b
 End If
-If ComboBox1.Text = "Деление" Then
+If ComboBox1.Text = "Р”РµР»РµРЅРёРµ" Then
 If b = 0 Then
-TextBox3.Text = "На 0 делить нельзя ("
+TextBox3.Text = "РќР° 0 РґРµР»РёС‚СЊ РЅРµР»СЊР·СЏ ("
 GoTo 1
 End If
 r = a / b
 End If
-If ComboBox1.Text = "Возведение в степень" Then
+If ComboBox1.Text = "Р’РѕР·РІРµРґРµРЅРёРµ РІ СЃС‚РµРїРµРЅСЊ" Then
 r = a ^ b
 End If
-If ComboBox1.Text = "Корень" Then
+If ComboBox1.Text = "РљРѕСЂРµРЅСЊ" Then
 r = a ^ (1 / b)
 End If
-If ComboBox1.Text = "Деление без остатка" Then
+If ComboBox1.Text = "Р”РµР»РµРЅРёРµ Р±РµР· РѕСЃС‚Р°С‚РєР°" Then
 r = a Mod b
 End If
 TextBox3.Text = r
@@ -33,17 +33,17 @@ TextBox3.Text = r
 End Sub
 
 Private Sub CommandButton2_Click()
-' Закрытие программы
+' Р—Р°РєСЂС‹С‚РёРµ РїСЂРѕРіСЂР°РјРјС‹
 Unload Me
 End Sub
 
 Private Sub UserForm_Initialize()
 Me.Caption = "Like a calculator"
-ComboBox1.AddItem "Сложение"
-ComboBox1.AddItem "Вычитание"
-ComboBox1.AddItem "Умножение"
-ComboBox1.AddItem "Деление"
-ComboBox1.AddItem "Возведение в степень"
-ComboBox1.AddItem "Корень"
-ComboBox1.AddItem "Деление без остатка"
+ComboBox1.AddItem "РЎР»РѕР¶РµРЅРёРµ"
+ComboBox1.AddItem "Р’С‹С‡РёС‚Р°РЅРёРµ"
+ComboBox1.AddItem "РЈРјРЅРѕР¶РµРЅРёРµ"
+ComboBox1.AddItem "Р”РµР»РµРЅРёРµ"
+ComboBox1.AddItem "Р’РѕР·РІРµРґРµРЅРёРµ РІ СЃС‚РµРїРµРЅСЊ"
+ComboBox1.AddItem "РљРѕСЂРµРЅСЊ"
+ComboBox1.AddItem "Р”РµР»РµРЅРёРµ Р±РµР· РѕСЃС‚Р°С‚РєР°"
 End Sub
