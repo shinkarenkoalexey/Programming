@@ -1,0 +1,95 @@
+Private Sub CommandButton1_Click()
+' Clear
+Dim C As Object
+For Each C In Лист1.Range("A1:z25")
+C = ""
+Next
+End Sub
+
+Private Sub CommandButton2_Click()
+'Style reset
+Dim C As Object
+For Each C In Лист1.Range("A1:E10")
+With C.Font
+        .Size = 11
+        .ColorIndex = 1
+        .Bold = False
+        .Name = "Calibri"
+End With
+Next
+End Sub
+
+Private Sub CommandButton3_Click()
+' Close
+Unload Me
+End Sub
+
+Private Sub CommandButton4_Click()
+' Рандом 1
+Dim i As Integer, f As Integer
+For i = 1 To 10
+For f = 1 To 5
+Cells(i, f) = Int((99 - 10 + 1) * Rnd + 10)
+Next f
+Next i
+End Sub
+
+Private Sub CommandButton5_Click()
+' Рандом 2
+Dim C As Object
+For Each C In Лист1.Range("A1:E10")
+C = Int((99 - 10 + 1) * Rnd + 10)
+Next
+End Sub
+
+Private Sub CommandButton6_Click()
+' Swap max and min
+Dim C As Object, max As Integer, min As Integer
+min = 100
+For Each C In Лист1.Range("A1:E10")
+If C > max Then max = C
+If C < min Then min = C
+Next
+For Each C In Лист1.Range("A1:E10")
+Select Case C
+Case Is = max
+C = min
+Case Is = min
+C = max
+End Select
+Next
+End Sub
+
+Private Sub CommandButton7_Click()
+' Mod5
+Dim C As Object
+For Each C In Лист1.Range("A1:E10")
+If C Mod 5 = 0 Then
+With C.Font
+        .Size = 20
+        .ColorIndex = 43
+        .Bold = True
+        .Name = "Arial"
+End With
+End If
+Next
+End Sub
+
+Private Sub CommandButton8_Click()
+' Mean
+Dim C As Object, sum As Long, count As Integer, G As Double, arf As Double
+G = 1
+For Each C In Лист1.Range("A1:E10")
+sum = sum + C
+count = count + 1
+G = G * C
+Next
+G = Round(G ^ (1 / count), 2)
+arf = Round(sum / count, 2)
+Лист1.Cells(12, 1) = "Среднее арифметическое = " & arf
+Лист1.Cells(13, 1) = "Среднее геометрическое = " & G
+End Sub
+
+Private Sub UserForm_Initialize()
+Me.Caption = "Module"
+End Sub
