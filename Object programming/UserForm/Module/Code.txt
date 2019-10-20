@@ -1,7 +1,7 @@
 Private Sub CommandButton1_Click()
 ' Clear
 Dim C As Object
-For Each C In Ëèñò1.Range("A1:z25")
+For Each C In Ð›Ð¸ÑÑ‚1.Range("A1:z25")
 C = ""
 Next
 End Sub
@@ -9,7 +9,7 @@ End Sub
 Private Sub CommandButton2_Click()
 'Style reset
 Dim C As Object
-For Each C In Ëèñò1.Range("A1:E10")
+For Each C In Ð›Ð¸ÑÑ‚1.Range("A1:E10")
 With C.Font
         .Size = 11
         .ColorIndex = 1
@@ -25,7 +25,7 @@ Unload Me
 End Sub
 
 Private Sub CommandButton4_Click()
-' Ðàíäîì 1
+' Ð Ð°Ð½Ð´Ð¾Ð¼ 1
 Dim i As Integer, f As Integer
 For i = 1 To 10
 For f = 1 To 5
@@ -35,9 +35,9 @@ Next i
 End Sub
 
 Private Sub CommandButton5_Click()
-' Ðàíäîì 2
+' Ð Ð°Ð½Ð´Ð¾Ð¼ 2
 Dim C As Object
-For Each C In Ëèñò1.Range("A1:E10")
+For Each C In Ð›Ð¸ÑÑ‚1.Range("A1:E10")
 C = Int((99 - 10 + 1) * Rnd + 10)
 Next
 End Sub
@@ -46,11 +46,11 @@ Private Sub CommandButton6_Click()
 ' Swap max and min
 Dim C As Object, max As Integer, min As Integer
 min = 100
-For Each C In Ëèñò1.Range("A1:E10")
+For Each C In Ð›Ð¸ÑÑ‚1.Range("A1:E10")
 If C > max Then max = C
 If C < min Then min = C
 Next
-For Each C In Ëèñò1.Range("A1:E10")
+For Each C In Ð›Ð¸ÑÑ‚1.Range("A1:E10")
 Select Case C
 Case Is = max
 C = min
@@ -63,7 +63,7 @@ End Sub
 Private Sub CommandButton7_Click()
 ' Mod5
 Dim C As Object
-For Each C In Ëèñò1.Range("A1:E10")
+For Each C In Ð›Ð¸ÑÑ‚1.Range("A1:E10")
 If C Mod 5 = 0 Then
 With C.Font
         .Size = 20
@@ -79,15 +79,15 @@ Private Sub CommandButton8_Click()
 ' Mean
 Dim C As Object, sum As Long, count As Integer, G As Double, arf As Double
 G = 1
-For Each C In Ëèñò1.Range("A1:E10")
+For Each C In Ð›Ð¸ÑÑ‚1.Range("A1:E10")
 sum = sum + C
 count = count + 1
 G = G * C
 Next
 G = Round(G ^ (1 / count), 2)
 arf = Round(sum / count, 2)
-Ëèñò1.Cells(12, 1) = "Ñðåäíåå àðèôìåòè÷åñêîå = " & arf
-Ëèñò1.Cells(13, 1) = "Ñðåäíåå ãåîìåòðè÷åñêîå = " & G
+Ð›Ð¸ÑÑ‚1.Cells(12, 1) = "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ = " & arf
+Ð›Ð¸ÑÑ‚1.Cells(13, 1) = "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð³ÐµÐ¾Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ = " & G
 End Sub
 
 Private Sub UserForm_Initialize()
