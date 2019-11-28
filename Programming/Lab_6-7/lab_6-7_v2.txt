@@ -1,0 +1,201 @@
+Option Explicit
+Sub a15()
+Dim A(15) As Integer, i As Integer, j As Integer, s As String, s1 As String, k As Integer, k1 As Integer, ar As Double, sum As Integer
+
+Randomize
+
+For i = 0 To 15
+    A(i) = Int((25 - 0 + 1) * Rnd + 0)
+    s = s & A(i) & " "
+    If A(i) Mod 2 = 1 Then
+        k1 = k1 + 1
+        sum = sum + A(i)
+    End If
+Next i
+i = 0
+ar = sum / k1
+For i = 0 To 15
+    If A(i) = 2 Then
+        For j = 0 To 15
+                If A(j) Mod 2 = 0 Then
+                    A(j) = 0
+                    k = k + 1
+                End If
+            s1 = s1 & A(j) & " "
+        Next j
+    End If
+Next i
+
+If k <> 0 Then
+    MsgBox s & vbCr & s1 & vbCr & "Количество четных - " & k
+Else
+    MsgBox s & vbCr & "Среднее арифметическое - " & ar
+End If
+
+End Sub
+
+Sub m15()
+Dim M(15) As Integer, ar As Integer, ge As Integer, i As Integer, sum2 As Long, s As String, s1 As String, k As Integer
+
+Randomize
+
+ge = 1
+
+For i = 0 To 15
+    M(i) = Int(Rnd * 100)
+    k = k + 1
+Next i
+i = 0
+For i = 0 To 15
+    s = s & M(i) & " "
+    sum2 = sum2 + M(i) ^ 2
+    ar = ar + M(i) / k
+    ge = ge * M(i) ^ (1 / k)
+Next i
+i = 0
+If (ar - ge) Mod 2 = 0 Then
+    For i = 0 To 15
+        If i Mod 2 = 0 Then
+            M(i) = 0
+        End If
+        s1 = s1 & M(i) & " "
+    Next i
+End If
+If (ar - ge) Mod 2 = 0 Then
+    MsgBox s & vbCr & s1
+Else
+    MsgBox s & vbCr & s & vbCr & "Сумма квадратов = " & sum2
+End If
+End Sub
+
+Sub c15()
+Dim C(15) As Integer, ar As Double, ot As Double, s As String, i As Integer, k As Integer
+
+Randomize
+
+For i = 0 To 15
+    C(i) = Int(Rnd * 100)
+    k = k + 1
+Next i
+i = 0
+For i = 0 To 15
+    s = s & C(i) & " "
+    ar = ar + C(i) / k
+Next i
+i = 0
+For i = 0 To 15
+    If Abs(C(i) - ar) > ot Then ot = Abs(C(i) - ar)
+Next i
+MsgBox s & vbCr & "Наибольшее отклонение = " & ot & vbCr & "Среднее арифметическое = " & ar
+End Sub
+
+Sub a12()
+Dim A(12) As Integer, ar As Double, s As String, s1 As String, k As Integer, i As Integer
+
+Randomize
+
+For i = 0 To 12
+    A(i) = Int(Rnd * 100)
+    k = k + 1
+Next i
+i = 0
+For i = 0 To 12
+    s = s & A(i) & " "
+    ar = ar + A(i) / k
+Next i
+i = 0
+For i = 0 To 12
+    If A(i) < ar Then A(i) = 0 Else A(i) = 1
+    s1 = s1 & A(i) & " "
+Next i
+MsgBox s & vbCr & s1 & vbCr & "Среднее арифметическое = " & ar
+End Sub
+
+Sub c8b8()
+Dim C(8) As Integer, B(8) As Integer, s As String, s1 As String, s2 As String, s3 As String, i As Integer
+
+Randomize
+
+For i = 0 To 8
+    C(i) = Int(Rnd * 100)
+    B(i) = Int(Rnd * 100)
+    s = s & C(i) & " "
+    s1 = s1 & B(i) & " "
+    If C(i) Mod 5 = 0 Then B(i) = B(i) * 5 Else B(i) = 0
+    s2 = s2 & C(i) & " "
+    s3 = s3 & B(i) & " "
+Next i
+MsgBox s & vbCr & s1 & vbCr & s2 & vbCr & s3
+End Sub
+
+Sub m152()
+Dim M(15) As Integer, sum As Integer, s As String, s1 As String, i As Integer, k As Integer, s2 As String
+
+Randomize
+
+For i = 0 To 15
+    M(i) = Int((15 - 0 + 1) * Rnd + 0)
+    s = s & M(i) & " "
+    If M(i) > 3 And M(i) < 11 Then k = k + 1
+Next i
+i = 0
+If k < 4 Then
+For i = 0 To 15
+    If M(i) Mod k = 0 Then sum = sum + M(i)
+    s1 = s1 & M(i) & " "
+Next i
+Else
+i = 0
+For i = 0 To 15
+    If M(i) Mod k <= 2 Then
+    M(i) = M(i) ^ 2
+    s2 = s2 & i & " "
+    End If
+    s1 = s1 & M(i) & " "
+Next i
+End If
+If k < 4 Then
+MsgBox s & vbCr & "Сумма элементов кратных этому количеству = " & sum & vbCr & "Количество элементов в пределах от 3 до 11 = " & k
+Else
+MsgBox s & vbCr & s1 & vbCr & "i, где остаток от деления <= 2 = " & s2 & vbCr & "Количество элементов в пределах от 3 до 11 = " & k
+End If
+End Sub
+
+Sub c152()
+Dim C(15) As Integer, ot As Integer, ar As Integer, k As Integer, i As Integer, s As String, s1 As String
+
+Randomize
+
+For i = 0 To 15
+    C(i) = Int(Rnd * 100)
+    k = k + 1
+Next i
+i = 0
+For i = 0 To 15
+    s = s & C(i) & " "
+    ar = ar + C(i) / k
+Next i
+i = 0
+For i = 0 To 15
+    If Abs(C(i) - ar) > ot Then ot = Abs(C(i) - ar)
+Next i
+i = 0
+If ot Mod 2 = 0 Then
+    For i = 0 To 15
+        If i = 2 Or i = 5 Or i = 8 Or i = 11 Or i = 14 Then
+            C(i) = ot
+        End If
+    Next i
+Else
+    For i = 0 To 15
+        If i = 4 Or i = 9 Or i = 14 Then
+            C(i) = ot
+        End If
+    Next i
+End If
+i = 0
+For i = 0 To 15
+    s1 = s1 & C(i) & " "
+Next i
+MsgBox s & vbCr & s1 & vbCr & "Наибольшее отклонение = " & ot
+End Sub
