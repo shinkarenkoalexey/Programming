@@ -145,7 +145,6 @@ For i = 0 To 15
     s1 = s1 & M(i) & " "
 Next i
 Else
-i = 0
 For i = 0 To 15
     If M(i) Mod k <= 2 Then
     M(i) = M(i) ^ 2
