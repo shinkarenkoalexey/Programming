@@ -27,9 +27,9 @@ For i = 0 To 15
 Next i
 
 If k <> 0 Then
-    MsgBox s & vbCr & s1 & vbCr & "Количество четных - " & k
+    MsgBox s & vbCr & s1 & vbCr & "РљРѕР»РёС‡РµСЃС‚РІРѕ С‡РµС‚РЅС‹С… - " & k
 Else
-    MsgBox s & vbCr & "Среднее арифметическое - " & ar
+    MsgBox s & vbCr & "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ - " & ar
 End If
 
 End Sub
@@ -64,7 +64,7 @@ End If
 If (ar - ge) Mod 2 = 0 Then
     MsgBox s & vbCr & s1
 Else
-    MsgBox s & vbCr & s & vbCr & "Сумма квадратов = " & sum2
+    MsgBox s & vbCr & s & vbCr & "РЎСѓРјРјР° РєРІР°РґСЂР°С‚РѕРІ = " & sum2
 End If
 End Sub
 
@@ -86,7 +86,7 @@ i = 0
 For i = 0 To 15
     If Abs(C(i) - ar) > ot Then ot = Abs(C(i) - ar)
 Next i
-MsgBox s & vbCr & "Наибольшее отклонение = " & ot & vbCr & "Среднее арифметическое = " & ar
+MsgBox s & vbCr & "РќР°РёР±РѕР»СЊС€РµРµ РѕС‚РєР»РѕРЅРµРЅРёРµ = " & ot & vbCr & "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ = " & ar
 End Sub
 
 Sub a12()
@@ -108,7 +108,7 @@ For i = 0 To 12
     If A(i) < ar Then A(i) = 0 Else A(i) = 1
     s1 = s1 & A(i) & " "
 Next i
-MsgBox s & vbCr & s1 & vbCr & "Среднее арифметическое = " & ar
+MsgBox s & vbCr & s1 & vbCr & "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ = " & ar
 End Sub
 
 Sub c8b8()
@@ -155,9 +155,9 @@ For i = 0 To 15
 Next i
 End If
 If k < 4 Then
-MsgBox s & vbCr & "Сумма элементов кратных этому количеству = " & sum & vbCr & "Количество элементов в пределах от 3 до 11 = " & k
+MsgBox s & vbCr & "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РєСЂР°С‚РЅС‹С… СЌС‚РѕРјСѓ РєРѕР»РёС‡РµСЃС‚РІСѓ = " & sum & vbCr & "РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РїСЂРµРґРµР»Р°С… РѕС‚ 3 РґРѕ 11 = " & k
 Else
-MsgBox s & vbCr & s1 & vbCr & "i, где остаток от деления <= 2 = " & s2 & vbCr & "Количество элементов в пределах от 3 до 11 = " & k
+MsgBox s & vbCr & s1 & vbCr & "i, РіРґРµ РѕСЃС‚Р°С‚РѕРє РѕС‚ РґРµР»РµРЅРёСЏ <= 2 = " & s2 & vbCr & "РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РїСЂРµРґРµР»Р°С… РѕС‚ 3 РґРѕ 11 = " & k
 End If
 End Sub
 
@@ -197,5 +197,5 @@ i = 0
 For i = 0 To 15
     s1 = s1 & C(i) & " "
 Next i
-MsgBox s & vbCr & s1 & vbCr & "Наибольшее отклонение = " & ot
+MsgBox s & vbCr & s1 & vbCr & "РќР°РёР±РѕР»СЊС€РµРµ РѕС‚РєР»РѕРЅРµРЅРёРµ = " & ot
 End Sub
